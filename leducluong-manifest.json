@@ -3,24 +3,24 @@
   "format": "CVAT for images 1.1",
   "guideline": "Road v1.0",
   "name": "leducluong",
-  "revision": 1,
-  "created_at": "2026-11-24T05:13:00+00:00",
+  "revision": 2,
+  "created_at": "2026-11-24T08:19:44+00:00",
   "files": [
     {
       "file": "leducluong-front.zip",
-      "bytes": 38320,
-      "sha256": "d197dbf4714f85ed2e823f3bc59e9c47a3a915d57e0ded212d2601c8024a7476",
+      "bytes": 8441,
+      "sha256": "46191b4656b6cbc573836e5d6b9db2052329682cd3cdf9cad263c08fdb2cf8f9",
       "contains_images": false,
-      "images": 12,
+      "images": 16,
       "images_unlabelled": 0,
-      "images_all_tags": 12,
+      "images_all_tags": 16,
       "shapes_by_label": {
-        "crosswalk": 2,
-        "drivable": 22,
-        "lane": 28,
-        "road_curb": 16,
-        "traffic_light": 17,
-        "traffic_sign": 2
+        "crosswalk": 3,
+        "drivable": 31,
+        "lane": 39,
+        "road_curb": 22,
+        "traffic_light": 23,
+        "traffic_sign": 11
       }
     },
     {
@@ -42,7 +42,7 @@
     }
   ],
   "lint": {
-    "nặng": 8,
+    "nặng": 9,
     "chính": 3,
     "nhẹ": 0
   },

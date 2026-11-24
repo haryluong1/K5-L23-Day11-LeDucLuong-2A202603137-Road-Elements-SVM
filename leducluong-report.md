@@ -1,8 +1,8 @@
 # Báo cáo cá nhân — Ngày 11
 Họ tên: Lê Đức Lương               Mã học viên: 2A202603137  
 Phiên bản CVAT (Help → About): CVAT v2.82.0  
-Guideline: Road v1.0    Lần nộp (`revision` trong manifest): 1  
-Thời điểm export (ngày giờ trên CVAT): 2026-11-24 12:12     Số lần nộp lại sau Rework: 0  
+Guideline: Road v1.0    Lần nộp (`revision` trong manifest): 2  
+Thời điểm export (ngày giờ trên CVAT): 2026-11-24 15:17     Số lần nộp lại sau Rework: 1  
 
 ## 1. Kiểm project
 | Mục | Đúng như guideline Road v1.0? | Ghi chú |
@@ -17,30 +17,32 @@ Cách đặt tag ảnh trên bản CVAT này: Chọn công cụ Tag ở thanh b�
 | Task | Ảnh | lane | road_curb | crosswalk | drivable | traffic_light | traffic_sign |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | front | 12 | 28 | 16 | 2 | 22 | 17 | 2 |
-| front-extra (đã làm __ / 4) | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| front-extra (đã làm 4 / 4) | 4 | 11 | 6 | 1 | 9 | 6 | 9 |
 | fisheye | 8 | 5 | 11 | 7 | 10 | 2 | 1 |
-| fisheye-extra (đã làm __ / 4) | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| fisheye-extra (đã làm 0 / 4) | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 
 ## 3. Bảng ca khó
 | Ảnh | Nhãn | Phân vân giữa | Đã chọn | Lý do |
 | --- | --- | --- | --- | --- |
-| A03, A05, A06, A09, A12 | lane | vẽ thêm vạch giả vs không vẽ | không vẽ L1 hoặc R1 | Thực tế đường không có vạch sơn hoặc bị che hoàn toàn, tuân thủ nguyên tắc không vẽ vạch không có |
+| A03, A05, A06, A07, A09, A12, A14 | lane | vẽ thêm vạch giả vs không vẽ | không vẽ L1 hoặc R1 | Thực tế đường không có vạch sơn (chỉ có mép vỉa hè `road_curb`) hoặc bị che hoàn toàn, tuân thủ nguyên tắc không vẽ vạch không có |
 | A10 | traffic_sign | biển chính gộp biển phụ vs tách biển phụ riêng | tách biển phụ riêng | Guideline Road v1.0 yêu cầu biển phụ có hộp riêng, group = supplementary |
+| A15 | traffic_sign | phân nhóm biển Mỹ (xanh lá, thoi cam, giới hạn tốc độ) | information, warning, prohibitory | Phân nhóm theo chức năng biển Mỹ trong Guideline mục 3 |
 | B05, B06, B07, B08 | lane | position L1/R1 vs other | other | Quy tắc fisheye camera hai bên sườn xe bắt buộc position = other |
 
 ## 4. Phiếu QC 1 nhận được
 Bạn kiểm lô của tôi: Nguyễn Đăng Khoa    Quyết định nhận được: Release  
 | Mã lỗi | Số lỗi | Đồng ý? | Đã sửa? |
 | --- | ---: | --- | --- |
+| QC1-01 | 1 | Đồng ý | Đã sửa tag camera trên B05 thành fisheye_left (lưu bản cũ vào r1/, nộp revision 2) |
 | QC1-04 | 1 | Đồng ý | Đã chỉnh lại chiều polyline trên A11 |
-| QC1-05 | 1 | Đồng ý | Đã gộp vạch L2 trên A01 |
+| QC1-05 | 1 | Đồng ý | Đã sửa position vạch L2 trùng trên A01 |
 | QC1-11 | 1 | Đồng ý | Đã thêm điểm uốn cong cho polyline trên B08 |
 
 ## 5. Kiểm file export
 | File | Mở lại được? | Số shape ảnh 1 (job / file) | Số shape ảnh 2 (job / file) | Tag camera có trong XML? |
 | --- | --- | --- | --- | --- |
-| leducluong-front.zip | Có | 87 | 87 | Có (front) |
-| leducluong-fisheye.zip | Có | 36 | 36 | Có (fisheye_*) |
+| leducluong-front.zip | Có | 9 / 9 (A01) | 8 / 8 (A02) | Có (front) |
+| leducluong-fisheye.zip | Có | 3 / 3 (B01) | 6 / 6 (B02) | Có (fisheye_*) |
 
 ## 6. Ảnh chụp màn hình
 1. Tab Labels của project: `docs/images/screens/01_project_labels.png`
